@@ -1,5 +1,7 @@
+//selects elements starting with A
 var selectElementsStartingWithA = function(array) {
-    return 'Write your method here';
+return array.sort();
+
 }
 
 var selectElementsStartingWithVowel = function(array) {
