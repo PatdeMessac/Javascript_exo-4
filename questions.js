@@ -1,6 +1,16 @@
-//selects elements starting with A
+//selects elements starting with A', function() {
+       // var result = selectElementsStartingWithA(['bananas', 'apples', 'pears', 'avocados']);
+       // expect(result).toEqual(['apples', 'avocados']);
+    
 var selectElementsStartingWithA = function(array) {
-return array.sort();
+var tableau = ['bananas', 'apples', 'pears', 'avocados'];
+var result = "";
+for (i = 0; i <= tableau.length; i++){
+    if (tableau[0] === "a") {
+return result
+    }
+//var result = array.charAt(0);
+ //return result;
 
 }
 
