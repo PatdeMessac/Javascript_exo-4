@@ -1,23 +1,31 @@
 // http://stackoverflow.com/questions/35989496/my-methods-arent-very-dry
 //https://gist.github.com/conradho/b56325eac1fdb7be7b30
 
-var selectElementsStartingWithA = function(array) {
+/*var selectElementsStartingWithA = function(array) {
     function startingWithA(word) {
         // use .charAt(0) instead of just [0] to be more explicit
         return word.charAt(0) === 'a';
     }
     return array.filter(startingWithA);
 };
-
-
-
+*/
+var selectElementsStartingWithA = function(array) {
+    var result =[];
+    for (i = 0 ; i < array.length ; i ++) {
+        var word = array [i];
+        if (word.charAt(0) == 'a'){
+            result.push(word);
+        }
+    }
+    return result;
+}
 
 //selects elements starting with a vowel', function() {
 //var result = selectElementsStartingWithVowel(['john', 'david', 'omar', 'fred', 'idris', 'angela']);
 //expect(result).toEqual(['omar', 'idris', 'angela']);
 
 var selectElementsStartingWithVowel = function(array) {
-    var vowels = ['a', 'e', 'i', 'o', 'u'];
+    var vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
     function startingWithVowel(word) {
         var firstChar = word.charAt(0);
         // if firstChar not in list, then index === -1
@@ -25,6 +33,24 @@ var selectElementsStartingWithVowel = function(array) {
     }
     return array.filter(startingWithVowel);
 };
+
+//OU
+
+/*
+var selectElementsStartingWithVowel = function(array) {
+    var vowel = ['a', 'e', 'i', 'o', 'u', 'y'];
+    for (var i = 0 ; i < array.length ; i++){
+        var Nom = array[i].charAt(0);
+        for (var vowel = 0 ; vowel < vowel.length ; vowel ++) {
+            if (Nom == vowel[vowel]) {
+                tab.push(array[i]);    
+            }
+        } 
+    }
+return Nom;
+}
+
+*/
 
 //removes null values from an array', function() {
        // var result = removeNullElements(['a', 'b', null, null, false, 0]);
@@ -73,20 +99,18 @@ var removeNullAndFalseElements = function(array) {
 //        ]);
 
     var everyPossiblePair = function(array) {
-    var everyPossiblePair = [];
-    // note: slice(0) creates deep copy of array
-    // reverse() mainpulates AND saves in place AND returns
-    var copyOfArray = array.slice().reverse();
-    for (var student1 of array) {
-        copyOfArray.pop();
-        for (var student2 of copyOfArray) {
-            everyPossiblePair.push([student1, student2].sort());
+        var everyPossiblePair = [];
+            // note: slice(0) creates deep copy of array
+            // reverse() manipulates AND saves in place AND returns
+        var copyOfArray = array.slice().reverse();
+        for (var student1 of array) {
+            copyOfArray.pop();
+            for (var student2 of copyOfArray) {
+                everyPossiblePair.push([student1, student2].sort());
         }
     }
     return everyPossiblePair.sort();
 };
-
-
 
 //takes all elements except the first 3', function() {
   //      var result = allElementsExceptFirstThree([1, 2, 3, 4, 5, 6, 7, 8]);
